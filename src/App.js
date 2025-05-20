@@ -1,11 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // 👈 Required for accordion to work
-
+import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Required for accordion and navbar toggling
 import headerImage from "./image/1.jpg";
 import serviceImage1 from "./image/2.jpg";
-import serviceImage2 from "./image/3.jpg";
-import serviceImage3 from "./image/4.jpg";
 
 export default function App() {
   return (
@@ -22,6 +19,7 @@ export default function App() {
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            style={{ backgroundColor: "#000" }} // Black background on toggler for visibility
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -42,7 +40,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <header className="text-white text-center d-flex align-items-center" style={{ backgroundImage: `url(${headerImage})`, backgroundSize: "cover", backgroundPosition: "center", height: "50vh" }}>
+      <header className="text-white text-center d-flex align-items-center" style={{ backgroundImage: `url(${headerImage})`, backgroundSize: "cover", backgroundPosition: "center", height: "50vh", marginTop: "0" }}>
         <div className="container">
           <h1>Building your online presence, one website at a time</h1>
         </div>
@@ -52,7 +50,7 @@ export default function App() {
       <section className="text-center my-5">
         <div className="container">
           <h2>Welcome to Website Development Services</h2>
-          <p>We are a leading website development company based in Kuala Lumpur, Malaysia. Our mission is to help businesses of all sizes create a strong online presence through stunning websites.</p>
+          <p>We are a leading website development company based in Nairobi, Kenya. Our mission is to help businesses of all sizes create a strong online presence through stunning websites.</p>
         </div>
       </section>
 
@@ -61,18 +59,18 @@ export default function App() {
         <div className="container">
           <h3 className="text-center mb-4">Services</h3>
           <div className="row">
-            <div className="col-md-4 text-center">
+            <div className="col-md-4 col-sm-6 mb-4 text-center">
               <img src={serviceImage1} className="img-fluid mb-3" alt="Custom Website Design" />
               <h5>Custom Website Design</h5>
               <p>Create a stunning site specific to your business needs with our custom design tools, scalable infrastructure, and creative team.</p>
             </div>
-            <div className="col-md-4 text-center">
-              <img src={serviceImage2} className="img-fluid mb-3" alt="E-commerce Solutions" />
+            <div className="col-md-4 col-sm-6 mb-4 text-center">
+              <img src="./image/3.jpg" className="img-fluid mb-3" alt="E-commerce Solutions" />
               <h5>E-commerce Solutions</h5>
               <p>Boost your online retail with our E-commerce packages. Increase sales, streamline your customer journey, and enhance user experience.</p>
             </div>
-            <div className="col-md-4 text-center">
-              <img src={serviceImage3} className="img-fluid mb-3" alt="Mobile App Development" />
+            <div className="col-md-4 col-sm-6 mb-4 text-center">
+              <img src="./image/4.jpg" className="img-fluid mb-3" alt="Mobile App Development" />
               <h5>Mobile App Development</h5>
               <p>Engage more customers on-the-go by investing in a mobile app development package. Android and iOS tailored experiences available.</p>
             </div>
@@ -131,7 +129,7 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-  <section id="contact" className="py-5">
+      <section id="contact" className="py-5">
         <div className="container text-center">
           <h4 className="mb-4">Contact us</h4>
           <p><strong>Phone:</strong> +60132936420</p>
@@ -142,7 +140,7 @@ export default function App() {
       {/* About Section */}
       <section id="about" className="bg-dark text-white text-center py-5">
         <div className="container">
-          <p>Website Development Services is a web development company dedicated to delivering high-performance websites. With a team of experienced professionals, we help small and medium-sized businesses unlock their online potential.</p>
+          <p>Website Development Services is a Nairobi-based web development company dedicated to delivering high-performance websites. With a team of experienced professionals, we help small and medium-sized businesses unlock their online potential.</p>
         </div>
       </section>
     </div>
