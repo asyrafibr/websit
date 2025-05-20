@@ -3,7 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Required for accordion and navbar toggling
 import headerImage from "./image/1.jpg";
 import serviceImage1 from "./image/2.jpg";
-
+import serviceImage2 from "./image/3.jpg";
+import serviceImage3 from "./image/4.jpg";
 export default function App() {
   return (
     <div>
@@ -65,12 +66,12 @@ export default function App() {
               <p>Create a stunning site specific to your business needs with our custom design tools, scalable infrastructure, and creative team.</p>
             </div>
             <div className="col-md-4 col-sm-6 mb-4 text-center">
-              <img src="./image/3.jpg" className="img-fluid mb-3" alt="E-commerce Solutions" />
+              <img src={serviceImage2} className="img-fluid mb-3" alt="E-commerce Solutions" />
               <h5>E-commerce Solutions</h5>
               <p>Boost your online retail with our E-commerce packages. Increase sales, streamline your customer journey, and enhance user experience.</p>
             </div>
             <div className="col-md-4 col-sm-6 mb-4 text-center">
-              <img src="./image/4.jpg" className="img-fluid mb-3" alt="Mobile App Development" />
+              <img src={serviceImage3} className="img-fluid mb-3" alt="Mobile App Development" />
               <h5>Mobile App Development</h5>
               <p>Engage more customers on-the-go by investing in a mobile app development package. Android and iOS tailored experiences available.</p>
             </div>
