@@ -45,7 +45,6 @@ export default function App() {
       <header className="text-white text-center d-flex align-items-center" style={{ backgroundImage: `url(${headerImage})`, backgroundSize: "cover", backgroundPosition: "center", height: "50vh" }}>
         <div className="container">
           <h1>Building your online presence, one website at a time</h1>
-          <button className="btn btn-light mt-3">Get Started</button>
         </div>
       </header>
 
