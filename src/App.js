@@ -5,6 +5,7 @@ import headerImage from "./image/1.jpg";
 import serviceImage1 from "./image/2.jpg";
 import serviceImage2 from "./image/3.jpg";
 import serviceImage3 from "./image/4.jpg";
+
 export default function App() {
   return (
     <div>
@@ -41,9 +42,10 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <header className="text-white text-center d-flex align-items-center" style={{ backgroundImage: `url(${headerImage})`, backgroundSize: "cover", backgroundPosition: "center", height: "50vh", marginTop: "0" }}>
+      <header className="text-white text-center d-flex align-items-center hero-section" style={{ backgroundImage: `url(${headerImage})`, backgroundSize: "cover", backgroundPosition: "center", height: "50vh", marginTop: "0" }}>
         <div className="container">
           <h1>Building your online presence, one website at a time</h1>
+          <button className="btn btn-light mt-3">Get Started</button>
         </div>
       </header>
 
@@ -60,20 +62,23 @@ export default function App() {
         <div className="container">
           <h3 className="text-center mb-4">Services</h3>
           <div className="row">
-            <div className="col-md-4 col-sm-6 mb-4 text-center">
-              <img src={serviceImage1} className="img-fluid mb-3" alt="Custom Website Design" />
+            <div className="col-md-4 col-sm-6 mb-4 text-center service-item">
+              <img src={serviceImage1} className="img-fluid mb-3 service-img" alt="Custom Website Design" />
               <h5>Custom Website Design</h5>
               <p>Create a stunning site specific to your business needs with our custom design tools, scalable infrastructure, and creative team.</p>
+              <button className="btn btn-info">More Info</button>
             </div>
-            <div className="col-md-4 col-sm-6 mb-4 text-center">
-              <img src={serviceImage2} className="img-fluid mb-3" alt="E-commerce Solutions" />
+            <div className="col-md-4 col-sm-6 mb-4 text-center service-item">
+              <img src={serviceImage2} className="img-fluid mb-3 service-img" alt="E-commerce Solutions" />
               <h5>E-commerce Solutions</h5>
               <p>Boost your online retail with our E-commerce packages. Increase sales, streamline your customer journey, and enhance user experience.</p>
+              <button className="btn btn-info">More Info</button>
             </div>
-            <div className="col-md-4 col-sm-6 mb-4 text-center">
-              <img src={serviceImage3} className="img-fluid mb-3" alt="Mobile App Development" />
+            <div className="col-md-4 col-sm-6 mb-4 text-center service-item">
+              <img src={serviceImage3} className="img-fluid mb-3 service-img" alt="Mobile App Development" />
               <h5>Mobile App Development</h5>
               <p>Engage more customers on-the-go by investing in a mobile app development package. Android and iOS tailored experiences available.</p>
+              <button className="btn btn-info">More Info</button>
             </div>
           </div>
         </div>
@@ -134,16 +139,62 @@ export default function App() {
         <div className="container text-center">
           <h4 className="mb-4">Contact us</h4>
           <p><strong>Phone:</strong> +60132936420</p>
-          <p><strong>Email:</strong> websitedevmyservices@gmail.com</p>
+          <p><strong>Email:</strong> devmywebsiteservice@gmail.com</p>
         </div>
       </section>
 
       {/* About Section */}
       <section id="about" className="bg-dark text-white text-center py-5">
         <div className="container">
-          <p>Website Development Services is a Nairobi-based web development company dedicated to delivering high-performance websites. With a team of experienced professionals, we help small and medium-sized businesses unlock their online potential.</p>
+          <p>Website Development Services is a Malaysia-based web development company dedicated to delivering high-performance websites. With a team of experienced professionals, we help small and medium-sized businesses unlock their online potential.</p>
+          <button className="btn btn-light mt-2">Get Started</button>
         </div>
       </section>
+
+      <style jsx>{`
+        .hero-section {
+          opacity: 0;
+          transform: translateY(50px);
+          animation: slideUp 1.2s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+          0% {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .service-item {
+          opacity: 0;
+          transform: translateY(30px);
+          animation: fadeInUp 1s ease-out forwards;
+          animation-delay: 0.3s;
+        }
+
+        .service-item:nth-child(2) {
+          animation-delay: 0.5s;
+        }
+
+        .service-item:nth-child(3) {
+          animation-delay: 0.7s;
+        }
+
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </div>
   );
 }
