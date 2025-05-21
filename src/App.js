@@ -66,19 +66,16 @@ export default function App() {
               <img src={serviceImage1} className="img-fluid mb-3 service-img" alt="Custom Website Design" />
               <h5>Custom Website Design</h5>
               <p>Create a stunning site specific to your business needs with our custom design tools, scalable infrastructure, and creative team.</p>
-              <button className="btn btn-info">More Info</button>
             </div>
             <div className="col-md-4 col-sm-6 mb-4 text-center service-item">
               <img src={serviceImage2} className="img-fluid mb-3 service-img" alt="E-commerce Solutions" />
               <h5>E-commerce Solutions</h5>
               <p>Boost your online retail with our E-commerce packages. Increase sales, streamline your customer journey, and enhance user experience.</p>
-              <button className="btn btn-info">More Info</button>
             </div>
             <div className="col-md-4 col-sm-6 mb-4 text-center service-item">
               <img src={serviceImage3} className="img-fluid mb-3 service-img" alt="Mobile App Development" />
               <h5>Mobile App Development</h5>
               <p>Engage more customers on-the-go by investing in a mobile app development package. Android and iOS tailored experiences available.</p>
-              <button className="btn btn-info">More Info</button>
             </div>
           </div>
         </div>
