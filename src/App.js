@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Required for accordion and navbar toggling
 import headerImage from "./image/1.jpg";
@@ -7,7 +7,15 @@ import serviceImage2 from "./image/3.jpg";
 import serviceImage3 from "./image/4.jpg";
 import { FaWhatsapp } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
+
 export default function App() {
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       {/* Header */}
@@ -31,7 +39,7 @@ export default function App() {
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            style={{ backgroundColor: "#000" }} // Black background on toggler for visibility
+            style={{ backgroundColor: "#000" }}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -79,8 +87,8 @@ export default function App() {
         <div className="container">
           <h2>Welcome to Website Development Services</h2>
           <p>
-            We are a leading website development company based in Nairobi,
-            Kenya. Our mission is to help businesses of all sizes create a
+            We are a leading website development company based in Kuala Lumpur,
+            Malaysia. Our mission is to help businesses of all sizes create a
             strong online presence through stunning websites.
           </p>
         </div>
@@ -138,6 +146,7 @@ export default function App() {
         <div className="container">
           <h4>Frequently Asked Questions</h4>
           <div className="accordion" id="faqAccordion">
+            {/* FAQ items */}
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingOne">
                 <button
@@ -164,6 +173,7 @@ export default function App() {
                 </div>
               </div>
             </div>
+
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingTwo">
                 <button
@@ -189,6 +199,7 @@ export default function App() {
                 </div>
               </div>
             </div>
+
             <div className="accordion-item">
               <h2 className="accordion-header" id="headingThree">
                 <button
@@ -218,20 +229,20 @@ export default function App() {
       </section>
 
       {/* Testimonial */}
-      <section className="bg-info text-white text-center py-4">
-        <p className="mb-0">
-          "Working with Website Development Services was a game-changer for my
-          business. Their team delivered a website that exceeded all my
-          expectations and helped me attract more customers." – John Doe
-        </p>
-      </section>
+<section style={{ backgroundColor: "#262626" }} className="text-white text-center py-4">
+  <p className="mb-0">
+    "Working with Website Development Services was a game-changer for my
+    business. Their team delivered a website that exceeded all my
+    expectations and helped me attract more customers." – John Doe
+  </p>
+</section>
 
       {/* Contact Section */}
       <section id="contact" className="py-5">
         <div className="container text-center">
           <h4 className="mb-4">Contact us</h4>
 
-          <div className="flex justify-center items-center gap-2 mb-2">
+          <div className="d-flex justify-content-center align-items-center gap-2 mb-2">
             <FaWhatsapp style={{ color: "#25D366", fontSize: "1.5rem" }} />
             <a
               href={`https://wa.me/60132936420?text=${encodeURIComponent(
@@ -239,17 +250,17 @@ export default function App() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-decoration-none text-primary"
             >
               +60 132 936 420
             </a>
           </div>
 
-          <div className="flex justify-center items-center gap-2">
+          <div className="d-flex justify-content-center align-items-center gap-2">
             <SiGmail style={{ color: "#EA4335", fontSize: "1.5rem" }} />
             <a
               href="mailto:devmywebsiteservice@gmail.com"
-              className="text-blue-600 hover:underline"
+              className="text-decoration-none text-primary"
             >
               devmywebsiteservice@gmail.com
             </a>
@@ -257,11 +268,19 @@ export default function App() {
         </div>
       </section>
 
+      {/* Animation and Layout Fixes */}
       <style jsx>{`
+        html,
+        body {
+          scroll-behavior: auto !important;
+          overflow-x: hidden;
+        }
+
         .hero-section {
           opacity: 0;
           transform: translateY(50px);
           animation: slideUp 1.2s ease-out forwards;
+          min-height: 50vh;
         }
 
         @keyframes slideUp {
